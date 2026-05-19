@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+:root {
+  --clr-bg: #fdfaf4;
+  --clr-text: #0b0702;
+  --clr-primary: #dda535;
+  --clr-secondary: #7ce9cc;
+  --clr-accent: #5b9ee4;
+  --box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.205);
+}
+.dark-mode {
+  --clr-text: #fdf8f2;
+  --clr-bg: #0d0902;
+  --clr-primary: #c99122;
+  --clr-secondary: #168366;
+  --clr-accent: #1a5ca2;
+  --box-shadow: 0 0 10px hsla(0, 0%, 100%, 0.205);
+}
 * {
   padding: 0;
   margin: 0;
@@ -10,20 +26,30 @@ html {
 }
 body {
   font-family: "Nunito Sans", sans-serif;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  transition: all 1s ease-in-out;
 }
 
 /* reset */
 a {
   text-decoration: none;
+  color: inherit;
 }
 ul,
 ol {
   list-style-type: none;
 }
+
+/* utility classes */
+.hide {
+  display: none;
+}
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid lime;
+  padding: 0 2em;
+  box-shadow: var(--box-shadow);
 
   .logo {
     width: 70px;
@@ -33,14 +59,19 @@ ol {
     align-items: center;
 
     a > span {
-      color: #000;
+      color: var(--clr-text);
       font-size: 2.5rem;
       cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    a > span:hover {
+      transform: scale(1.2);
+      color: var(--clr-accent);
     }
   }
 
   .nav {
-    border: 1px solid red;
     height: 70px;
     .nav_items {
       display: flex;
@@ -49,7 +80,64 @@ ol {
       align-items: center;
       .item {
         font-size: 1.25rem;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .item:hover {
+        transform: scale(1.125);
+        color: var(--clr-accent);
       }
     }
+  }
+
+  .toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 3rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    span:hover {
+      transform: scale(1.125);
+      color: var(--clr-accent);
+    }
+  }
+}
+
+.hero-page {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3em;
+  padding: 2em;
+  section {
+    height: calc(100vh - 150px);
+    width: 50%;
+  }
+  .left-section {
+    background-color: hsla(0, 0%, 100%, 0.205);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
+    border-radius: 16px;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+
+    .title {
+      font-size: 2.5rem;
+      border-right: 2px solid var(--clr-text);
+    }
+
+    .about-me {
+      font-size: 1.25rem;
+    }
+  }
+  .right-section {
   }
 }
