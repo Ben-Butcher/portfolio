@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 :root {
-  --clr-bg: #fdfaf4;
+  --clr-bg: #c0bfbd;
   --clr-text: #0b0702;
   --clr-primary: #dda535;
   --clr-secondary: #7ce9cc;
@@ -44,6 +44,19 @@ ol {
 /* utility classes */
 .hide {
   display: none;
+}
+.active {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-primary);
 }
 .header {
   display: flex;
@@ -90,7 +103,7 @@ ol {
     }
   }
 
-  .toggle {
+  .mode-toggle-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,34 +123,37 @@ ol {
 
 .hero-page {
   display: flex;
-  justify-content: space-evenly;
-  gap: 3em;
-  padding: 2em;
-  section {
-    height: calc(100vh - 150px);
-    width: 50%;
-  }
-  .left-section {
-    background-color: hsla(0, 0%, 100%, 0.205);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--box-shadow);
-    border-radius: 16px;
-    padding: 2em;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+
+  .page-navigation {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: max-content;
+    align-self: flex-end;
+    margin-left: auto;
     gap: 2em;
+    padding: 1.5em;
 
-    .title {
-      font-size: 2.5rem;
-      border-right: 2px solid var(--clr-text);
+    .page {
+      height: 100px;
+      width: 100px;
+      cursor: pointer;
+      background-image: url(https://picsum.photos/200/300);
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px #00000052;
+      transition: transform 0.3s ease-in-out;
     }
-
-    .about-me {
-      font-size: 1.25rem;
+    .page:hover {
+      transform: scale(1.125);
     }
-  }
-  .right-section {
   }
 }

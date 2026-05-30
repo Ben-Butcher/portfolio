@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="style/styles.css" />
     <title>My Portfolio</title>
   </head>
-  <body>
+  <body id="body">
     <!-- Header Section -->
     <header class="header">
       <div class="logo">
-        <a href="#"
+        <a href="index.html"
           ><span class="material-symbols-outlined"> terminal_2 </span></a
         >
       </div>
@@ -23,25 +23,30 @@
         <ul class="nav_items">
           <li class="item"><a href="#">Home</a></li>
           <li class="item"><a href="#">Projects</a></li>
+          <li class="item"><a href="#">Skills</a></li>
           <li class="item"><a href="#">About Me</a></li>
         </ul>
       </nav>
-      <div class="mode_toggle_container">
-        <span class="material-symbols-outlined"> toggle_on </span>
-        <span class="material-symbols-outlined hide"> toggle_off </span>
+      <div class="mode-toggle-container">
+        <span id="light-mode" class="material-symbols-outlined">
+          toggle_on
+        </span>
+        <span id="dark-mode" class="material-symbols-outlined hide">
+          toggle_off
+        </span>
       </div>
     </header>
 
     <main class="hero-page">
-      <section class="left-section">
-        <h3 class="title">My Name is Ben</h3>
-        <p class="about-me">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error nemo
-          maxime ducimus quidem, deleniti tempore vero molestiae! Cumque, libero
-          magnam! Provident vel id, fuga aliquid libero facere iste amet cum?
-        </p>
-      </section>
-      <section class="right-section"></section>
+      <div class="div">
+        <h1 id="hero">Home Page</h1>
+      </div>
+      <div class="page-navigation">
+        <div class="page" name="home"><p>Home</p></div>
+        <div class="page" name="projects"><p>Projects</p></div>
+        <div class="page" name="skills"><p>Skills</p></div>
+        <div class="page" name="about-me"><p>About Me</p></div>
+      </div>
     </main>
 
     <script src="script/app.js"></script>
