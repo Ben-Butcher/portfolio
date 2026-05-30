@@ -122,15 +122,19 @@ ol {
 }
 
 .hero-page {
-  display: flex;
+  display: grid;
   height: calc(100vh - 100px);
   overflow: hidden;
 
+  .hero-container {
+    justify-self: start;
+    align-items: center;
+  }
   .page-navigation {
     display: flex;
     height: max-content;
-    align-self: flex-end;
-    margin-left: auto;
+    align-self: end;
+    justify-content: end;
     gap: 2em;
     padding: 1.5em;
 
